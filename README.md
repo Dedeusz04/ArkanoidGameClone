@@ -11,6 +11,10 @@ A classic Arkanoid (breakout) game built in **C++20** with **SFML 2.5**. The pro
 - Pause menu, level selection, and game-over screen
 - Background music and sound effects
 
+## Documentation
+
+A detailed project report is available: [Sprawozdanie PK Arkanoid.pdf](Sprawozdanie%20PK%20Arkanoid.pdf)
+
 ## Requirements
 
 - **Visual Studio 2022** with C++20 module support
