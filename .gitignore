@@ -1,0 +1,17 @@
+# Build output
+x64/
+Debug/
+Release/
+*.obj
+*.exe
+*.pdb
+*.ilk
+*.log
+*.tlog
+
+# Visual Studio
+.vs/
+*.vcxproj.user
+
+# SFML DLLs (optional — remove these lines if you want DLLs in the repo)
+# *.dll

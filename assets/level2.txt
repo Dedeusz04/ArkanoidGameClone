@@ -1,0 +1,2 @@
+paddleWidth: 100
+ballSpeed: 300

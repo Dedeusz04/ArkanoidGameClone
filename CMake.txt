@@ -1,0 +1,46 @@
+cmake_minimum_required(VERSION 3.16)
+project(MyGame LANGUAGES CXX)
+
+# Enable C++20
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+# Find SFML
+find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
+
+# Add executable with all source files
+add_executable(MyGame
+    src/game.cpp
+    src/game_state.ixx
+    src/game_state_manager.ixx
+    src/game_state_manager.cpp
+    src/menu_state.ixx
+    src/menu_state.cpp
+    src/nickname_input_state.ixx
+    src/nickname_input_state.cpp
+    src/playing_state.ixx
+    src/playing_state.cpp
+    src/game_over_state.ixx
+    src/game_over_state.cpp
+    src/audio.ixx
+    src/audio.cpp
+    src/game_objects.ixx
+    src/game_objects.cpp
+    src/highscore.ixx
+    src/highscore.cpp
+    src/config.ixx
+    src/config.cpp
+)
+
+# Link SFML libraries
+target_link_libraries(MyGame PRIVATE sfml-graphics sfml-audio)
+
+# Enable C++20 modules (for MSVC)
+if (MSVC)
+    target_compile_options(MyGame PRIVATE /experimental:module /module:stdIfcDir "${CMAKE_BINARY_DIR}")
+endif()
+
+# Copy assets to build directory
+file(COPY ${CMAKE_SOURCE_DIR}/assets DESTINATION ${CMAKE_BINARY_DIR})
+file(COPY ${CMAKE_SOURCE_DIR}/players DESTINATION ${CMAKE_BINARY_DIR})
